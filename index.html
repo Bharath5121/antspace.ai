@@ -27,12 +27,19 @@
             --gradient-end: #1e293b;
         }
 
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
+            width: 100%;
+            max-width: 100vw;
         }
 
         /* Top Accent Bar */
@@ -63,8 +70,9 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 20px;
             position: relative;
+            width: 100%;
         }
 
         /* Hero Section */
@@ -83,6 +91,7 @@
             max-width: 1000px;
             position: relative;
             z-index: 2;
+            width: 100%;
         }
 
         .hero-badge {
@@ -178,6 +187,7 @@
         section {
             padding: 25px 20px;
             position: relative;
+            width: 100%;
         }
 
         .section-spacing {
@@ -220,6 +230,7 @@
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
+            padding: 0 15px;
         }
 
         /* Cards Grid - 4 per row */
@@ -431,17 +442,19 @@
             font-weight: 500;
         }
 
-        /* Two Column Layout */
+        /* Two Column Layout - FIXED FOR MOBILE */
         .two-col {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            gap: 25px;
             margin-top: 30px;
+            width: 100%;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .two-col {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
@@ -449,10 +462,11 @@
             background: var(--bg-card);
             border: 2px solid var(--border);
             border-radius: 16px;
-            padding: 30px;
+            padding: 25px;
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .panel::before {
@@ -575,13 +589,14 @@
             background: var(--bg-card);
             border: 2px solid var(--border);
             border-radius: 12px;
-            overflow: hidden;
+            overflow-x: auto;
             margin-top: 25px;
         }
 
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 600px;
         }
 
         .comparison-table thead {
@@ -914,6 +929,7 @@
             border: 2px solid var(--accent-bright);
             color: white;
             box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+            text-decoration: none;
         }
 
         .fab:hover {
@@ -921,13 +937,76 @@
             box-shadow: 0 12px 32px rgba(16, 185, 129, 0.5);
         }
 
-        /* Responsive */
+        /* Mobile Responsive Adjustments */
         @media (max-width: 768px) {
-            .logo-main { font-size: 3rem; letter-spacing: 4px; }
-            .tagline { font-size: 1.3rem; }
-            .section-title { font-size: 2rem; }
-            .funding-amount { font-size: 3rem; }
-            .revenue-amount { font-size: 3rem; }
+            .logo-main { 
+                font-size: 3rem; 
+                letter-spacing: 4px; 
+            }
+            
+            .tagline { 
+                font-size: 1.3rem; 
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .section-title { 
+                font-size: 2rem; 
+            }
+            
+            .funding-amount { 
+                font-size: 3rem; 
+            }
+            
+            .revenue-amount { 
+                font-size: 3rem; 
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .panel {
+                padding: 20px;
+            }
+            
+            .panel h3 {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 14px 28px;
+                font-size: 0.9rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .hero-badge {
+                padding: 10px 20px;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-main {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
