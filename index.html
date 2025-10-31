@@ -467,6 +467,7 @@
             position: relative;
             overflow: hidden;
             width: 100%;
+            min-height: 400px;
         }
 
         .panel::before {
@@ -507,15 +508,16 @@
         }
 
         .panel li {
-            padding: 16px 0;
+            padding: 18px 0;
             border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: start;
+            display: grid;
+            grid-template-columns: 30px 160px 1fr;
             gap: 15px;
+            align-items: center;
             font-size: 1rem;
             color: var(--text-secondary);
             line-height: 1.6;
-            min-height: 70px;
+            min-height: 80px;
         }
 
         .panel li:last-child {
@@ -526,12 +528,22 @@
             content: "→";
             color: var(--accent-bright);
             font-weight: bold;
-            flex-shrink: 0;
             font-size: 1.3rem;
         }
 
         .panel strong {
             color: var(--accent-bright);
+            text-align: left;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .panel li {
+                grid-template-columns: 25px 120px 1fr;
+                gap: 10px;
+                min-height: 70px;
+                padding: 14px 0;
+            }
         }
 
         /* Features Grid - 4 per row */
@@ -972,6 +984,7 @@
             
             .panel {
                 padding: 20px;
+                min-height: auto;
             }
             
             .panel h3 {
