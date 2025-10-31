@@ -1004,6 +1004,10 @@
                 padding: 10px 20px;
                 font-size: 0.75rem;
             }
+
+            .founder-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1021,6 +1025,112 @@
                 width: 100%;
                 justify-content: center;
             }
+        }
+
+        /* Founder Section Specific Styles */
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .founder-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--bg-lighter), var(--bg-card));
+            border: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 20px;
+        }
+
+        .founder-stats {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .founder-stat-item {
+            margin: 8px 0;
+        }
+
+        .founder-stat-value {
+            color: var(--accent-bright);
+            font-weight: 700;
+        }
+
+        .founder-content {
+            text-align: left;
+        }
+
+        .founder-subtitle {
+            color: var(--accent-bright);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .founder-section-box {
+            background: var(--bg-lighter);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .founder-section-box h4 {
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .founder-section-box.highlight {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid var(--accent);
+        }
+
+        .founder-section-box.highlight h4 {
+            color: var(--accent-bright);
+        }
+
+        .founder-list {
+            list-style: none;
+            padding: 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .founder-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .founder-list li::before {
+            position: absolute;
+            left: 0;
+            color: var(--accent-bright);
+        }
+
+        .founder-list.bullet li::before {
+            content: '▸';
+        }
+
+        .founder-list.check li::before {
+            content: '✓';
+        }
+
+        .founder-quote {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -1452,7 +1562,7 @@
     <section class="container section-spacing" id="funding">
         <div class="section-header">
             <div class="section-badge">INVESTMENT</div>
-            <h2 class="section-title">The Opportunity</h2>
+            <h2 class="section-title">Investment Details</h2>
         </div>
         <div class="funding-highlight">
             <div class="funding-amount">$1,000,000</div>
@@ -1559,6 +1669,102 @@
         </div>
     </section>
 
+    <!-- Meet the Founder Section -->
+    <section class="container section-spacing" id="founder">
+        <div class="section-header">
+            <div class="section-badge">LEADERSHIP</div>
+            <h2 class="section-title">Meet the Founder</h2>
+            <p class="section-subtitle">
+                Battle-tested engineer with enterprise experience and a clear vision
+            </p>
+        </div>
+
+        <div class="founder-panel" style="max-width: 900px; margin: 30px auto;">
+            <div class="founder-grid">
+                <!-- Left: Photo placeholder and quick stats -->
+                <div style="text-align: center;">
+                    <div class="founder-photo">
+                        👤
+                    </div>
+                    <div class="founder-stats">
+                        <div class="founder-stat-item">
+                            <span class="founder-stat-value">2+ years</span><br>at Nvidia
+                        </div>
+                        <div class="founder-stat-item">
+                            <span class="founder-stat-value">80%</span><br>Platform Built
+                        </div>
+                        <div class="founder-stat-item">
+                            <span class="founder-stat-value">IIT Network</span><br>Talent Access
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="founder-content">
+                    <div class="founder-name" style="text-align: left; margin-bottom: 10px;">Bharath Reddy</div>
+                    <div class="founder-subtitle">
+                        Founder & CEO
+                    </div>
+
+                    <div class="founder-section-box" style="border-left: 4px solid var(--accent);">
+                        <h4>Professional Background</h4>
+                        <ul class="founder-list bullet">
+                            <li><strong>DevOps Engineer at Nvidia</strong> (2+ years)</li>
+                            <li>Deep expertise in enterprise software infrastructure</li>
+                            <li>Hands-on experience evaluating hundreds of vendors, tools, and partners</li>
+                            <li>Built 80% of Antspace prototype using modern AI development tools</li>
+                        </ul>
+                    </div>
+
+                    <div class="founder-section-box highlight">
+                        <h4>The Origin Story</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin: 0;">
+                            While working at Nvidia, I experienced the fragmentation of B2B discovery daily—evaluating countless tools, vendors, and partners across scattered platforms. Hours wasted piecing together basic information. This frustration wasn't unique to me; it was universal. That's when I realized: <strong style="color: var(--text-primary);">the solution I needed didn't exist.</strong> So I built it.
+                        </p>
+                    </div>
+
+                    <div class="founder-section-box">
+                        <h4>Why I'll Win</h4>
+                        <ul class="founder-list check">
+                            <li><strong style="color: var(--text-primary);">Deep Domain Knowledge:</strong> Lived the problem at enterprise scale</li>
+                            <li><strong style="color: var(--text-primary);">Execution Speed:</strong> AI-accelerated development, already 80% complete</li>
+                            <li><strong style="color: var(--text-primary);">Talent Pipeline:</strong> Access to IIT network for world-class engineering team</li>
+                            <li><strong style="color: var(--text-primary);">Resilience:</strong> Faced challenges that taught me the value of persistence and strong relationships</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 25px; border-top: 2px solid var(--border); text-align: center;">
+                <p class="founder-quote">
+                    "Every company starts as an idea backed by determination. I'm not just building a platform—I'm solving a problem I've lived. 
+                    With the right partnership, Antspace will become the standard for B2B discovery."
+                </p>
+            </div>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <h4 style="color: var(--text-primary); margin-bottom: 15px; font-size: 1.1rem;">Post-Funding Team Strategy</h4>
+                <div class="card-grid" style="margin-top: 15px; grid-template-columns: repeat(3, 1fr);">
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon">👥</div>
+                        <h3 class="card-title">Engineering Team</h3>
+                        <p class="card-text">Recruit 8-10 engineers from IIT network and top tech talent pools</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">Sales & Marketing</h3>
+                        <p class="card-text">Hire experienced B2B sales lead and growth marketing specialist</p>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Advisory Board</h3>
+                        <p class="card-text">Build strategic advisor network from enterprise SaaS and marketplace sectors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact-section section-spacing" id="contact">
         <div class="container">
@@ -1592,7 +1798,7 @@
             </div>
 
             <div style="margin-top: 40px;">
-                <a href="mailto:bharathreddy283@gmail.com?subject=Antspace Investment Discussion&body=Hi Bharath,%0D%0A%0D%0AI'm interested in the $1M pre-seed opportunity.%0D%0A%0D%0ALet's schedule a call.%0D%0A%0D%0AThank you!" 
+                <a href="mailto:bharathreddy283@gmail.com?subject=Antspace Investment Discussion&body=Hi Bharath,%0D%0A%0D%0AI'm interested in the $1M pre-seed Investment Details.%0D%0A%0D%0ALet's schedule a call.%0D%0A%0D%0AThank you!" 
                    class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">
                     💰 Schedule Investment Discussion
                 </a>
